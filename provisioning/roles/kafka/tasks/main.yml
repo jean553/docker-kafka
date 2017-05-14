@@ -1,0 +1,6 @@
+---
+
+  - name: download kafka
+    get_url:
+      url: "{{ kafka_url }}"
+      dest: "{{ temp_directory_path }}/{{ kafka_archive }}"
