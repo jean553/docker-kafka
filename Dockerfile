@@ -25,3 +25,9 @@ RUN pip install --upgrade \
 
 COPY provisioning/ provisioning
 RUN ansible-playbook provisioning/site.yml -c local
+
+# Copy entrypoint.
+
+COPY entrypoint.sh /
+RUN chmod o+x ./entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
