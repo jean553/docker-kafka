@@ -1,6 +1,7 @@
 ---
 
-  - name: download zookeeper
-    get_url:
-      url: "{{ zookeeper_url }}"
-      dest: "{{ temp_directory_path }}/{{ zookeeper_archive }}"
+  - name: install zookeeper
+    unarchive:
+      src: "{{ zookeeper_url }}"
+      dest: "{{ temp_directory_path }}"
+      remote_src: True
