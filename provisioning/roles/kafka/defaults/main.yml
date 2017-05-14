@@ -1,5 +1,4 @@
 ---
 
 temp_directory_path: "/opt"
-kafka_archive: "kafka_2.11-0.10.2.0.tgz"
-kafka_url: "ftp://mirrors.ircam.fr/pub/apache/kafka/0.10.2.0/{{ kafka_archive }}"
+kafka_url: "ftp://mirrors.ircam.fr/pub/apache/kafka/0.10.2.0/kafka_2.11-0.10.2.0.tgz"

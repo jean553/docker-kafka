@@ -1,5 +1,4 @@
 ---
 
 temp_directory_path: "/opt"
-zookeeper_archive: "zookeeper-3.4.9.tar.gz"
-zookeeper_url: "ftp://mirrors.ircam.fr/pub/apache/zookeeper/zookeeper-3.4.9/{{ zookeeper_archive }}"
+zookeeper_url: "ftp://mirrors.ircam.fr/pub/apache/zookeeper/zookeeper-3.4.9/zookeeper-3.4.9.tar.gz"
