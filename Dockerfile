@@ -5,10 +5,23 @@ FROM debian:jessie
 RUN apt-get update \
     && apt-get upgrade -y
 
-# install zookeeper
-CMD curl ftp://mirrors.ircam.fr/pub/apache/zookeeper/zookeeper-3.5.3-beta/zookeeper-3.5.3-beta.tar.gz > zookeeper.tgz
-CMD tar xvf zookeeper.tar.gz
+# Only installs ansible's minimal required dependencies.
 
-# install kafka
-CMD curl ftp://mirrors.ircam.fr/pub/apache/kafka/0.10.2.0/kafka_2.11-0.10.2.0.tgz > kafka.tgz
-CMD tar xzf kafka.tgz
+RUN apt-get install -y \
+    python-dev \
+    python-pip  \
+    libffi-dev \
+    libssl-dev \
+    sudo
+
+RUN pip install --upgrade \
+    ansible \
+    setuptools \
+    packaging \
+    pyparsing \
+    appdirs
+
+# Execute ansible playbook(s).
+
+COPY provisioning/ provisioning
+RUN ansible-playbook provisioning/site.yml -c local
